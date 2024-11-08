@@ -1,0 +1,20 @@
+print("Введите длину")
+l = float(input())
+
+print("Введите ширину")
+w = float(input())
+
+print("Введите толщину")
+t = float(input())
+
+print("Введите плотность")
+d = float(input())
+
+calcMass = l * w * t  * d
+
+print("Масса данной пластины равна ", calcMass, "кг")
+
+calcCentX = l/2
+calcCentY = w/2
+
+print("Координаты центра тяжести Х=", calcCentX, "Y=", calcCentY)
