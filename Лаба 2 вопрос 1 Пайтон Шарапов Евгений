@@ -1,0 +1,18 @@
+def pifagor(a, b, c):
+    max_num = max(a, b, c)
+    
+    if max_num == a:
+        return b**2 + c**2 == a
+    elif max_num == b:
+        return a**2 + c**2 == b
+    else:
+        return a**2 + b**2 == c
+
+a = int(input("Введите первое целое число: "))
+b = int(input("Введите второе целое число: "))
+c = int(input("Введите третье целое число: "))
+
+if pifagor(a, b, c):
+    print("Все три числа числа Пифагора.")
+else:
+    print("Не удовлетворяют теореме Пифагора")
