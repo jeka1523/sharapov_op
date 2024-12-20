@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int triangle(double A[2], double B[2], double C[2]) {
+    
+    double area = (B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0]);
+    
+    return area == 0;
+}
+
+int main() {
+    double A[2], B[2], C[2];
+    
+    printf("Введите координаты точки A (x y): ");
+    scanf("%lf %lf", &A[0], &A[1]);
+    
+    printf("Введите координаты точки B (x y): ");
+    scanf("%lf %lf", &B[0], &B[1]);
+    
+    printf("Введите координаты точки C (x y): ");
+    scanf("%lf %lf", &C[0], &C[1]);
+    
+    if (triangle(A, B, C)) {
+        printf("Точки A, B и C являются коллинеарными.\n");
+    } else {
+        printf("Точки A, B и C не являются коллинеарными.\n");
+    }
+    
+    return 0;
+}
