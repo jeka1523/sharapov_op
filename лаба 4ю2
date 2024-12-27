@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int nod(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int m, n;
+
+    cout << "Введите числитель (m): ";
+    cin >> m;
+    cout << "Введите знаменатель (n): ";
+    cin >> n;
+
+    if (n == 0) {
+        cout << "Знаменатель не может быть равен нулю!" << endl;
+        return 0;
+    }
+
+    int delim = nod(m, n);
+
+    m /= delim;
+    n /= delim;
+
+    cout << "Сокращенная дробь: " << m << "/" << n << endl;
+
+    return 0;
+}
