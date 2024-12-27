@@ -1,0 +1,25 @@
+def total_work_hours(n, m):
+    total_hours = 0
+    
+    # Переводим m в минуты для удобства
+    m_minutes = m * 60
+    
+    for i in range(n):
+        # Время работы каждой сенокосилки в минутах
+        work_time = m_minutes + (i * 10)
+        total_hours += work_time
+    
+    # Переводим общее время из минут в часы
+    total_hours_in_hours = total_hours / 60
+    
+    return total_hours_in_hours
+
+# Ввод данных
+n = int(input("Введите количество сенокосилок (n): "))
+m = float(input("Введите количество часов, которые работала первая сенокосилка (m): "))
+
+# Получаем общее время работы
+total_hours = total_work_hours(n, m)
+
+# Вывод результата
+print(f"Общее время работы всей бригады: {total_hours} часов")
