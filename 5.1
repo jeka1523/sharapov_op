@@ -1,0 +1,19 @@
+def reshenie(x, y, center, radius):
+    a, b = center
+    r_squared = radius ** 2  # Квадрат радиуса
+    return (x - a) ** 2 + (y - b) ** 2 <= r_squared
+
+# Ввод данных
+n = int(input("Введите количество точек: "))
+a, b = map(float, input("Введите координаты центра круга (a b): ").split())
+r = float(input("Введите радиус круга: "))
+
+count = 0 
+
+for i in range(n):
+    x, y = map(float, input(f"Введите координаты точки {i + 1} (x y): ").split())
+    if reshenie(x, y, (a, b), r):
+        count += 1
+
+# Вывод результата
+print(f"Количество точек, попадающих в круг: {count}")
